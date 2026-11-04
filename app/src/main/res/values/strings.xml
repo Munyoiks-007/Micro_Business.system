@@ -1,3 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Micro Business System</string>
+
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Sign in to manage your business</string>
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">Set up your business in a minute</string>
+
+    <string name="hint_owner_name">Full name</string>
+    <string name="hint_business_name">Business name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Phone (e.g. 0722513159)</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+
+    <string name="action_login">Sign in</string>
+    <string name="action_register">Create account</string>
+    <string name="action_logout">Log out</string>
+    <string name="go_register">New here? Create an account</string>
+    <string name="go_login">Already have an account? Sign in</string>
+
+    <string name="welcome_business">Welcome, %1$s</string>
+    <string name="main_placeholder">Dashboard coming next</string>
 </resources>
