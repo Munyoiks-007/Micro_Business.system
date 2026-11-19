@@ -1,15 +1,29 @@
+# Build & Gradle
+build/
+.gradle/
+/build/
+/captures/
+
+# IDE & Project Config
+.idea/
 *.iml
-.gradle
+local.properties
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
 .DS_Store
-/build
-/captures
+.kotlin/
+.navigation/
+
+# Keystores & Logs
+*.keystore
+*.jks
+*.log
+
+# Misc
 .externalNativeBuild
 .cxx
-local.properties
+*.pyc
+.classpath
+.project
+.settings/
+bin/
+tmp/
