@@ -97,9 +97,9 @@ class SalesViewModel @Inject constructor(
         } catch (invalid: IllegalArgumentException) {
             MpesaInitiationResult.Error(invalid.message ?: "Check the sale details and try again.")
         } catch (_: IllegalStateException) {
-            MpesaInitiationResult.Error("Your authenticated session or payment attempt could not be verified. Sign in again and check the sales list before retrying.")
+            MpesaInitiationResult.Error("Your session could not be verified. Sign in again and try once more.")
         } catch (_: Exception) {
-            MpesaInitiationResult.Error("The payment attempt could not be started. Check the sales list before retrying.")
+            MpesaInitiationResult.Error("The M-Pesa request could not be started. Please try again.")
         }
     }
 

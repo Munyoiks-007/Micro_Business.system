@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function authenticatedAs(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow read, delete: if authenticatedAs(userId)
+        && resource.data.uid == userId;
+      allow create: if authenticatedAs(userId)
+        && request.resource.data.uid == userId;
+      allow update: if authenticatedAs(userId)
+        && resource.data.uid == userId
+        && request.resource.data.uid == userId
+        && request.resource.data.uid == resource.data.uid;
+
+      match /inventory/{itemId} {
+        allow read, delete: if authenticatedAs(userId)
+          && resource.data.ownerUid == userId;
+        allow create: if authenticatedAs(userId)
+          && request.resource.data.ownerUid == userId;
+        allow update: if authenticatedAs(userId)
+          && resource.data.ownerUid == userId
+          && request.resource.data.ownerUid == userId
+          && request.resource.data.ownerUid == resource.data.ownerUid;
+      }
+
+      match /sales/{saleId} {
+        allow read, delete: if authenticatedAs(userId)
+          && resource.data.ownerUid == userId;
+        allow create: if authenticatedAs(userId)
+          && request.resource.data.ownerUid == userId;
+        allow update: if authenticatedAs(userId)
+          && resource.data.ownerUid == userId
+          && request.resource.data.ownerUid == userId
+          && request.resource.data.ownerUid == resource.data.ownerUid;
+      }
+    }
+    // All paths outside the explicitly authorized user data remain denied.
+  }
+}
