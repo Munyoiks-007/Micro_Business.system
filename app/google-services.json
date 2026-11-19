@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "670295721221",
+    "project_id": "microbusinesssystem",
+    "storage_bucket": "microbusinesssystem.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670295721221:android:540bdf4d730a8d4c25236c",
+        "android_client_info": {
+          "package_name": "com.example.microbusinesssystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvZ2Q3nXLLSFXPuWbFs0e_hb80ECADsjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
