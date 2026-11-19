@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function authenticatedAs(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    function profileBelongsToPath(data, userId) {
+      return !('uid' in data) || data.uid == userId;
+    }
+
+    function recordBelongsToPathOrIsLegacy(data, userId) {
+      return !('ownerUid' in data) || data.ownerUid == userId;
+    }
+
+    match /users/{userId} {
+      // Transitional profile rule: existing profiles may predate the uid field,
+      // while new/updated profiles must retain the path UID.
+      allow read, delete: if authenticatedAs(userId)
+        && profileBelongsToPath(resource.data, userId);
+      allow create: if authenticatedAs(userId)
+        && request.resource.data.uid == userId;
+      allow update: if authenticatedAs(userId)
+        && profileBelongsToPath(resource.data, userId)
+        && request.resource.data.uid == userId
+        && (!('uid' in resource.data)
+          || request.resource.data.uid == resource.data.uid);
+
+      match /inventory/{itemId} {
+        // Legacy records without ownerUid remain available only via their
+        // existing /users/{uid}/... path. New writes require ownerUid.
+        allow read, delete: if authenticatedAs(userId)
+          && recordBelongsToPathOrIsLegacy(resource.data, userId);
+        allow create: if authenticatedAs(userId)
+          && request.resource.data.ownerUid == userId;
+        // A legitimate owner may attach ownerUid to a legacy record. Once
+        // present, ownerUid cannot be changed or removed.
+        allow update: if authenticatedAs(userId)
+          && recordBelongsToPathOrIsLegacy(resource.data, userId)
+          && request.resource.data.ownerUid == userId
+          && (!('ownerUid' in resource.data)
+            || request.resource.data.ownerUid == resource.data.ownerUid);
+      }
+
+      match /sales/{saleId} {
+        allow read, delete: if authenticatedAs(userId)
+          && recordBelongsToPathOrIsLegacy(resource.data, userId);
+        allow create: if authenticatedAs(userId)
+          && request.resource.data.ownerUid == userId;
+        allow update: if authenticatedAs(userId)
+          && recordBelongsToPathOrIsLegacy(resource.data, userId)
+          && request.resource.data.ownerUid == userId
+          && (!('ownerUid' in resource.data)
+            || request.resource.data.ownerUid == resource.data.ownerUid);
+      }
+    }
+    // All paths outside the explicitly authorized user data remain denied.
+  }
+}
