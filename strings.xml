@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Micro Business System</string>
+
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Sign in to manage your business</string>
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">Set up your business in a minute</string>
+
+    <string name="hint_owner_name">Full name</string>
+    <string name="hint_business_name">Business name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Phone (e.g. 0722513159)</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+
+    <string name="action_login">Sign in</string>
+    <string name="action_register">Create account</string>
+    <string name="action_logout">Log out</string>
+    <string name="go_register">New here? Create an account</string>
+    <string name="go_login">Already have an account? Sign in</string>
+
+    <string name="welcome_business">Welcome, %1$s</string>
+    <string name="main_placeholder">Dashboard coming next</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_sales">Sales</string>
+    <string name="nav_inventory">Inventory</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Dashboard -->
+    <string name="open_for_business">● OPEN FOR BUSINESS</string>
+    <string name="sales_goals_title">Sales goals</string>
+    <string name="sales_goals_empty">No daily sales target set. Add one to track daily, weekly and monthly progress.</string>
+    <string name="sales_goals_loading">Loading sales goals and history…</string>
+    <string name="action_set_sales_goals">Set or edit targets</string>
+    <string name="action_save_goals">Save targets</string>
+    <string name="daily_sales_target">Daily target (Ksh)</string>
+    <string name="weekly_sales_target">Weekly target (calculated)</string>
+    <string name="monthly_sales_target">Monthly target (calculated)</string>
+    <string name="sales_goal_currency_hint">Enter one daily target in Ksh. It carries forward until changed. A change saved today applies from today in Africa/Nairobi; earlier dates keep their saved target. Weekly and monthly targets sum each date’s target. Leave blank to stop setting a target going forward.</string>
+    <string name="sales_goals_saved">Sales targets saved.</string>
+    <string name="sales_goals_save_failed">Sales targets could not be saved. Please try again.</string>
+    <string name="sales_goal_invalid_amount">Enter a valid nonnegative amount with up to two decimal places.</string>
+    <string name="sales_goal_history_title">Previous completed sales</string>
+    <string name="sales_goal_history_empty">No completed sales are available for previous periods.</string>
+    <string name="goal_daily_label">Today</string>
+    <string name="goal_weekly_label">This week</string>
+    <string name="goal_monthly_label">This month</string>
+    <string name="goal_progress_format">%1$s: %2$s of %3$s · %4$d%% · %5$s remaining</string>
+    <string name="goal_achieved_suffix"> · target achieved</string>
+    <string name="goal_no_target_format">%1$s: %2$s actual · no target set</string>
+    <string name="todays_revenue">TODAY\'S REVENUE</string>
+    <string name="completed_sales">COMPLETED SALES</string>
+    <string name="completed_sales_caption">Confirmed sales</string>
+    <string name="low_stock_title">LOW STOCK ITEMS</string>
+    <string name="no_low_stock_items">No items are below their alert threshold.</string>
+    <string name="low_stock_more_format"> and %1$d more</string>
+    <string name="revenue_today_caption">Completed sales today</string>
+    <string name="quick_operations">Quick Operations</string>
+    <string name="quick_sale">+ Quick Sale</string>
+
+    <!-- Sales -->
+    <string name="sales_mpesa_title">Sales &amp; Payments</string>
+    <string name="hint_item_desc">Item / Service</string>
+    <string name="hint_sale_quantity">Quantity</string>
+    <string name="hint_unit_price_ksh">Unit price (Ksh)</string>
+    <string name="sale_total_label">Sale total</string>
+    <string name="hint_mpesa_phone">M-Pesa Phone (e.g. 2547XXXXXXXX)</string>
+    <string name="action_stk_push">Trigger M-Pesa STK Push</string>
+    <string name="action_reset_sandbox_attempts">Reset Sandbox Payment Attempts</string>
+    <string name="mpesa_callback_notice">M-Pesa requests cannot be confirmed in this app yet. Accepted or uncertain attempts stay outside revenue until a trusted server callback is integrated.</string>
+    <string name="action_record_manual_sale">Record manual sale</string>
+    <string name="mpesa_config_missing">M-Pesa sandbox is not configured. Use a manual sale or configure sandbox settings.</string>
+    <string name="mpesa_attempt_pending">STK request accepted. Waiting for payment confirmation; this sale is not included in revenue.</string>
+    <string name="mpesa_attempt_uncertain">The payment request outcome is uncertain. Do not submit it again until it is checked.</string>
+    <string name="mpesa_attempt_already_open">An M-Pesa attempt is pending or uncertain. Check its status before starting another.</string>
+    <string name="mpesa_attempt_failed">The M-Pesa request failed. No completed sale was recorded.</string>
+    <string name="mpesa_attempt_not_sent">The M-Pesa request was not sent. No completed sale was recorded.</string>
+    <string name="mpesa_status_sync_warning">Local status was saved, but cloud sync failed.</string>
+    <string name="mpesa_initiating">Initiating M-Pesa payment…</string>
+    <string name="mpesa_waiting_confirmation">STK Push sent. Waiting for customer confirmation. Payment is not yet confirmed.</string>
+    <string name="mpesa_status_uncertain">Payment status is uncertain. Do not retry until this attempt is checked.</string>
+    <string name="mpesa_interrupted">Payment initiation was interrupted. Check the sales list before retrying.</string>
+    <string name="manual_sale_saved">Manual sale recorded.</string>
+    <string name="manual_sale_local_only">Manual sale recorded on this device, but cloud sync failed. Do not submit it again.</string>
+    <string name="status_initiated">Initiated</string>
+    <string name="status_pending">Pending confirmation</string>
+    <string name="status_completed">Completed</string>
+    <string name="status_failed">Failed</string>
+    <string name="status_cancelled">Cancelled</string>
+    <string name="status_uncertain">Outcome uncertain</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="filter_date">Filter Date</string>
+    <string name="clear_date_filter">Clear</string>
+    <string name="no_sales_for_selected_period">No sales found for the selected period.</string>
+    <string name="no_sales_recorded">No sales recorded.</string>
+    <string name="sales_date_range_invalid">The end date must be on or after the start date.</string>
+
+    <!-- Inventory -->
+    <string name="inventory_title">Inventory Management</string>
+    <string name="hint_item_name">Item Name</string>
+    <string name="hint_category">Category (e.g. Retail, Food)</string>
+    <string name="hint_price_ksh">Price (Ksh)</string>
+    <string name="hint_quantity">Quantity</string>
+    <string name="action_add_stock">Add Stock Item</string>
+    <string name="action_save_item_changes">Save Changes</string>
+    <string name="action_cancel_edit">Cancel Edit</string>
+    <string name="action_edit_item">Edit</string>
+    <string name="action_delete_item">Delete</string>
+    <string name="delete_inventory_title">Delete inventory item?</string>
+    <string name="delete_inventory_message">Delete %1$s from your inventory? This cannot be undone.</string>
+    <string name="inventory_added">Inventory item added.</string>
+    <string name="inventory_updated">Inventory item updated.</string>
+    <string name="inventory_deleted">Inventory item deleted.</string>
+    <string name="inventory_saved_local_sync_failed">Saved on this device, but cloud sync failed. You can retry by editing this item when connected.</string>
+    <string name="inventory_delete_sync_failed">Cloud deletion failed; the item is still saved on this device.</string>
+    <string name="inventory_local_delete_failed">Deleted from the cloud, but its local copy could not be removed. Please try again.</string>
+    <string name="inventory_save_failed">The inventory item could not be saved. Please try again.</string>
+    <string name="inventory_delete_failed">The inventory item could not be deleted. Please try again.</string>
+    <string name="action_confirm_delete">Delete</string>
+    <string name="action_keep_item">Cancel</string>
+    <string name="current_inventory">Current Inventory</string>
+
+    <!-- Settings -->
+    <string name="settings_profile_title">Settings &amp; Profile</string>
+    <string name="action_save_profile">Save Profile Changes</string>
+</resources>
